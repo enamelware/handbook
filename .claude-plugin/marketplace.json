@@ -1,0 +1,12 @@
+{
+  "name": "enamelware",
+  "description": "Enamelware's handbook, as a Claude Code plugin",
+  "owner": { "name": "Enamelware" },
+  "plugins": [
+    {
+      "name": "enamelware",
+      "source": "./",
+      "description": "How Enamelware works: the principles, standards, workflow and sources every Enamelware repo follows."
+    }
+  ]
+}
