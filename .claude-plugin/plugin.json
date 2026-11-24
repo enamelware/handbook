@@ -1,0 +1,11 @@
+{
+  "name": "enamelware",
+  "version": "1.0.0",
+  "description": "How Enamelware works: the principles, standards, workflow and sources every Enamelware repo follows.",
+  "author": {
+    "name": "Enamelware"
+  },
+  "homepage": "https://github.com/enamelware/handbook",
+  "repository": "https://github.com/enamelware/handbook",
+  "license": "CC-BY-4.0"
+}
