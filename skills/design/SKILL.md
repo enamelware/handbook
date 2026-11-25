@@ -39,7 +39,7 @@ Enamelware tools aren't sold on Steam, but Valve's compatibility review is the c
 - **Everything works with the controller alone,** with default controls, and nothing needs a setting changed first.
 - **Hints match the input in use:** controller buttons while a controller is used, never keyboard or mouse prompts.
 - **Text entry without a keyboard:** any text field works with the controller, through a built-in entry or a clear hint to open Steam's on-screen keyboard.
-- **Readable at arm's length:** the smallest text never under 9 pixels tall at 1280×800, aiming for 12. Check this in screenshots at that size.
+- **Readable at arm's length:** the smallest text meets Valve's bar (at least 9 pixels tall on the Steam Deck's own screen), aiming for 12. Check it by hand in screenshots from each test device at its own resolution. It's a readability check, never a layout target, so no size is written into code, styles or tests.
 - **No mouse-only moments:** every launcher, dialog and error screen works with the controller.
 - **Smooth by default:** responsive without tuning, including on slower ARM devices.
 
