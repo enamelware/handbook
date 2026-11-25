@@ -1,6 +1,6 @@
 ---
 name: decisions
-description: Enamelware's decision policy. Use before deciding anything a spec or issue doesn't cover, before stopping work or asking a question, when a task touches a hard stop (dependencies, licences, legal, user files, network, publishing, private details, shared names, scope, irreversible operations, device state, cost), or when two sources disagree.
+description: Enamelware's decision policy. Use before deciding anything a spec or issue doesn't cover, before stopping work or asking a question, when a task touches a hard stop (dependencies, licences, legal, user files, network, publishing, private details, shared names, scope, irreversible operations, device state, the Steam client, cost), or when two sources disagree.
 ---
 
 # Decisions
@@ -33,6 +33,7 @@ These always escalate, whoever the actor is and however small the change:
 - A spec that can be read two ways when the readings look different to the user
 - Irreversible operations: force-pushing, moving a pushed tag, deleting a repo or a branch with unmerged work, deleting issues
 - Changing a device's state outside the repo: installing, uninstalling, or changing system or Steam settings
+- Touching the running Steam client: connecting to it, or opening Big Picture or Gaming Mode, even just to read
 - Anything that costs money or needs an account
 - About 30 minutes without progress
 
