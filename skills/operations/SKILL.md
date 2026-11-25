@@ -54,17 +54,18 @@ Moving a card to Done is the approval. An issue that needs a decision gets a "bl
 
 | Size | What it is | Becomes the next size when | Checks, in order |
 | --- | --- | --- | --- |
-| **S** | One small change: about 3 files or fewer, not counting tests, the decision log, the changelog, the version file or regenerated files. No new screen, component or page, and no change to data formats, the settings format, design tokens, launch, the local server, privacy or licences | It crosses any of those limits | The builder writes the code and its tests; the quick check; the reviewer, which also checks the tests |
+| **S** | One small change: about 3 files or fewer, not counting tests, the decision log, the changelog, the version file or regenerated files. No new screen, component or page, and no change to data formats, the settings format, where the app keeps or looks for its data, design tokens, launch, the local server, privacy or licences | It crosses any of those limits | The builder writes the code and its tests; the quick check; the reviewer, which also checks the tests |
 | **M** | One feature, one screen, or one component or style guide page, new or changed | It grows past one feature or screen | Same as S |
 | **L** | Several screens, or a change across an app or the design system, that can't usefully be split. Anything that can be split becomes a series instead | Nothing is bigger | The builder writes the code and its tests; the quick check; the test-checker, which adds missing tests; the reviewer, even if the test-checker failed; the full check, once, run by the builder before merging (the test-checker doesn't run it) |
 
+- **Each repo names its own files** behind these limits (its settings file, tokens file, launch script, local server, licence and vendored files) in its CLAUDE.md, so the builder can check them.
 - **Choosing a size:** when unsure between two, take the bigger. An issue with no size gets one when /next reads it, with the reason noted on the issue.
-- **Sizes only go up** during a build. An upgrade changes the label, notes the reason on the issue once, and switches to the new size's checks.
+- **Sizes only go up** during a build, and the size is checked again before the checks start. An upgrade changes the label, notes the reason on the issue once, and switches to the new size's checks.
 - **Fix rounds:** at most 2, and every check of the size runs again each round. After that the issue is blocked.
 - **Merging:** squash-merged into one commit that references the issue, after the quick check passes again on main. An L also needs the full check.
 - **The full check also runs before any version bump or release,** whatever the sizes involved.
-- **Bundles:** neighbouring S issues in Ready for dev that touch the same area share one branch and one review, with one commit per issue. Issues from More to do are never bundled, refactors only bundle with refactors, and a blocked issue never joins. If one issue grows to M it stays in the bundle; if one grows to L, the whole bundle takes the L checks.
-- **Series:** each issue takes its own size's checks. After the last one merges, one review covers the whole series, and the cards wait in Building until it passes. A series that contains an L also gets the full check in that review. Fixes the series review asks for become one follow-up issue that goes straight to Ready for dev, since it fixes work already approved.
+- **Bundles:** neighbouring S issues in Ready for dev that touch the same area share one branch and one review, with one commit per issue. None may wait on an unbuilt issue outside the bundle. Issues from More to do are never bundled, refactors only bundle with refactors, and a blocked issue never joins. If one issue grows to M it stays in the bundle; if one grows to L, the whole bundle takes the L checks.
+- **Series:** each issue takes its own size's checks. After the last one merges, one review covers the whole series, and the cards wait in Building until it passes. A series that contains an L also gets the full check in that review. Fixes the series review asks for become one follow-up issue that goes straight to Ready for dev, since it fixes work already approved. If the follow-up's review fails too, one more follow-up is allowed; after that, the last one is blocked.
 - **Idle work:** tidy-ups and refactor proposals are S or M, never L. Tidy-ups always get the test-checker and the reviewer, whatever their size.
 
 ## Commands
